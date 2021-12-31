@@ -5,209 +5,92 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  min-height: 100vh;
+  background: #fdfdfd;
+  padding: 1.5rem;
+  font-family: "Roboto Condensed", sans-serif;
 }
-body .contactMeMsg {
-  color: #888;
-  position: absolute;
-  top: 60px;
-  left: 30%;
-}
-body .contactMeMsg .emailMeLink {
-  text-decoration: none;
-  color: #888;
-}
-body main {
+body header {
   display: flex;
-  min-height: 100vh;
-}
-body main .left {
-  background: #fff;
-  height: 100%;
-  width: 50%;
-  min-height: 100vh;
-  padding: 200px 5%;
-}
-body main .left .education .serif {
-  font-family: "EB Garamond", serif;
-}
-body main .left .education .educationIn {
-  font-size: 20px;
-  color: #696968;
-}
-body main .left .education .placeName {
-  color: #888;
-  margin-top: 3px;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-body main .left .education .date {
-  font-size: 12px;
-  margin-bottom: 5px;
-  color: #888;
-}
-body main .left .education ul {
-  list-style: none;
-}
-body main .left .education ul li {
-  margin-top: 20px;
-}
-body main .left .education a {
-  color: #888;
-}
-body main .left .title {
-  text-transform: uppercase;
-  color: #696968;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-body main .left .title i {
-  margin-bottom: 3px;
-  width: 25px;
-  height: 25px;
-}
-body main .left .interests {
-  margin-top: 50px;
-}
-body main .left .interests .icons {
-  display: flex;
-}
-body main .left .interests .icons .icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 10px;
-}
-body main .left .interests .icons .icon .iconMain {
-  background: #f4f4f4;
-  height: 50px;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   position: relative;
 }
-body main .left .interests .icons .icon .iconMain i {
-  color: #888;
-  height: 20px;
-  width: 20px;
+body header::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: gray;
+  display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: calc(100% + 3rem);
+}
+body header .name {
+  font-size: clamp(1rem, 8vw, 10rem);
+  text-transform: uppercase;
+  position: relative;
+}
+body header .name::before {
+  content: "";
+  width: 20%;
+  height: 4px;
+  background: #f8c421;
+  display: block;
+  position: absolute;
+  top: 90%;
+  z-index: 5;
+}
+body header .name::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: gray;
+  display: block;
+  position: absolute;
+  top: 90%;
+  right: 0;
+}
+body header .github-contact {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+body header .github-contact .github-icon {
+  height: 40px;
+  margin-right: 10px;
+}
+body header .github-contact .github-link {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body header .contact-info {
+  min-width: 230px;
+}
+body header .contact-info section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+body header .contact-info section .icon-container {
+  height: 50px;
+  width: 50px;
+  background: #f8c421;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 17px;
-}
-body main .left .interests .icons .icon .caption {
-  font-size: 11px;
-  margin: 7px 0;
-  color: #888;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-body main .right {
-  background: #f4f4f4;
-  min-height: 100vh;
-  height: 100%;
-  width: 50%;
-  padding: 100px 5%;
-}
-body main .right .name {
-  font-size: clamp(20px, 5vw, 30px);
-}
-body main .right .name .firstName {
-  font-weight: 300;
-  line-height: clamp(30px, 9vw, 50px);
-}
-body main .right .name .lastName {
-  font-weight: 900;
-  line-height: clamp(30px, 9vw, 50px);
-  letter-spacing: 0.05em;
-}
-body main .right .banner {
-  background: #333333;
-  color: #f4f4f4;
-  text-transform: uppercase;
-  padding: 0.25rem 0.5rem;
-  font-size: clamp(8px, 2vw, 10px);
-  letter-spacing: 0.1em;
-}
-body main .right .star {
   margin-right: 5px;
 }
-body main .right .title {
-  text-transform: uppercase;
-  color: #696968;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+body header .contact-info section .icon-container .icon {
+  width: 25px;
 }
-body main .right .skills {
-  margin-top: 50px;
-}
-body main .right .skills .allSkills .skillsTable {
-  color: #333;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  font-size: 12px;
+body header .contact-info section .contact-info-section-title {
+  font-weight: 800;
   text-transform: uppercase;
 }
-body main .right .skills .allSkills .skillsTable .rating {
-  font-size: 9px;
-  padding-left: 10px;
-}
-body main .right .skills .allSkills .skillsTable .rating i {
-  margin: 0 1px;
-}
-body main .right .experience {
-  margin-top: 30px;
-}
-body main .right .experience section {
-  margin-bottom: 30px;
-  color: #888;
-}
-body main .right .experience section .serif {
-  font-family: "EB Garamond", serif;
-}
-body main .right .experience section .date {
-  font-size: 12px;
-  margin-bottom: 5px;
-}
-body main .right .experience section .jobName {
-  font-size: 20px;
-  color: #696968;
-}
-body main .right .experience section .jobDes {
-  margin-top: 3px;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-body main .right .experience section .fullDes {
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-body main .right .experience section .links button {
-  border: none;
-  outline: none;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 3px;
-  font-size: 13px;
-  cursor: pointer;
-}
-body main .right .experience section .links button.projectLink {
-  background: #333;
-}
-body main .right .experience section .links button.githubRepoLink {
-  background: #222;
-  margin: 5px;
-}
-body main .right .experience section .links button:disabled {
-  opacity: 80%;
-  cursor: not-allowed;
+body header .contact-info section .contact-info-main {
+  font-size: 0.8em;
+  color: gray;
 }
 
 /*# sourceMappingURL=style.css.map */

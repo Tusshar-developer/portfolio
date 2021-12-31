@@ -1,3 +1,6 @@
+$primaryClr: #fdfdfd;
+$secondaryClr: #f8c421;
+
 * {
   margin: 0;
   padding: 0;
@@ -5,252 +8,102 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  min-height: 100vh;
+  background: $primaryClr;
+  padding: 1.5rem;
+  font-family: "Roboto Condensed", sans-serif;
 
-  .contactMeMsg {
-    color: #888;
-    position: absolute;
-    top: 60px;
-    left: 30%;
-
-    .emailMeLink {
-      text-decoration: none;
-      color: #888;
-    }
-  }
-
-  main {
+  header {
     display: flex;
-    min-height: 100vh;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
 
-    .left {
-      background: #fff;
-      height: 100%;
-      width: 50%;
-      min-height: 100vh;
-      padding: 200px 5%;
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background: gray;
+      display: block;
+      position: absolute;
+      top: calc(100% + 3rem);
+    }
 
-      .education {
-        .serif {
-          font-family: "EB Garamond", serif;
-        }
+    .name {
+      font-size: clamp(1rem, 8vw, 10rem);
+      text-transform: uppercase;
+      position: relative;
 
-        .educationIn {
-          font-size: 20px;
-          color: #696968;
-        }
-
-        .placeName {
-          color: #888;
-          margin-top: 3px;
-          margin-bottom: 8px;
-          font-size: 14px;
-        }
-
-        .date {
-          font-size: 12px;
-          margin-bottom: 5px;
-          color: #888;
-        }
-
-        ul {
-          list-style: none;
-
-          li {
-            margin-top: 20px;
-          }
-        }
-
-        a {
-          color: #888;
-        }
+      &::before {
+        content: "";
+        width: 20%;
+        height: 4px;
+        background: $secondaryClr;
+        display: block;
+        position: absolute;
+        top: 90%;
+        z-index: 5;
       }
 
-      .title {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: gray;
+        display: block;
+        position: absolute;
+        top: 90%;
+        right: 0;
+      }
+    }
+
+    .github-contact {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+
+      .github-icon {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .github-link {
+        color: black;
         text-transform: uppercase;
-        color: #696968;
-        font-size: 20px;
-        font-weight: 600;
+        text-decoration: none;
+      }
+    }
+
+    .contact-info {
+      min-width: 230px;
+
+      section {
+        display: flex;
+        align-items: center;
         margin-bottom: 10px;
 
-        i {
-          margin-bottom: 3px;
-          width: 25px;
-          height: 25px;
-        }
-      }
-
-      .interests {
-        margin-top: 50px;
-
-        .icons {
+        .icon-container {
+          height: 50px;
+          width: 50px;
+          background: $secondaryClr;
+          border-radius: 50%;
           display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 5px;
 
           .icon {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 5px 10px;
-
-            .iconMain {
-              background: #f4f4f4;
-              height: 50px;
-              aspect-ratio: 1 / 1;
-              border-radius: 100%;
-              position: relative;
-
-              i {
-                color: #888;
-                height: 20px;
-                width: 20px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 17px;
-              }
-            }
-
-            .caption {
-              font-size: 11px;
-              margin: 7px 0;
-              color: #888;
-              text-transform: uppercase;
-              font-weight: 500;
-            }
+            width: 25px;
           }
         }
-      }
-    }
 
-    .right {
-      background: #f4f4f4;
-      min-height: 100vh;
-      height: 100%;
-      width: 50%;
-      padding: 100px 5%;
-
-      .name {
-        font-size: clamp(20px, 5vw, 30px);
-
-        .firstName {
-          font-weight: 300;
-          line-height: clamp(30px, 9vw, 50px);
+        .contact-info-section-title {
+          font-weight: 800;
+          text-transform: uppercase;
         }
 
-        .lastName {
-          font-weight: 900;
-          line-height: clamp(30px, 9vw, 50px);
-          letter-spacing: 0.05em;
-        }
-      }
-
-      .banner {
-        background: #333333;
-        color: #f4f4f4;
-        text-transform: uppercase;
-        padding: 0.25rem 0.5rem;
-        font-size: clamp(8px, 2vw, 10px);
-        letter-spacing: 0.1em;
-      }
-
-      .star {
-        margin-right: 5px;
-      }
-
-      .title {
-        text-transform: uppercase;
-        color: #696968;
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      .skills {
-        margin-top: 50px;
-
-        .allSkills {
-          .skillsTable {
-            color: #333;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            font-size: 12px;
-            text-transform: uppercase;
-
-            .rating {
-              font-size: 9px;
-              padding-left: 10px;
-
-              i {
-                margin: 0 1px;
-              }
-            }
-          }
-        }
-      }
-
-      .experience {
-        margin-top: 30px;
-
-        section {
-          margin-bottom: 30px;
-          color: #888;
-
-          .serif {
-            font-family: "EB Garamond", serif;
-          }
-
-          .date {
-            font-size: 12px;
-            margin-bottom: 5px;
-          }
-
-          .jobName {
-            font-size: 20px;
-            color: #696968;
-          }
-
-          .jobDes {
-            margin-top: 3px;
-            margin-bottom: 8px;
-            font-size: 14px;
-          }
-
-          .fullDes {
-            font-size: 12px;
-            margin-bottom: 8px;
-          }
-
-          .links {
-            button {
-              border: none;
-              outline: none;
-              color: #fff;
-              padding: 0.5rem 1rem;
-              border-radius: 3px;
-              font-size: 13px;
-              cursor: pointer;
-
-              &.projectLink {
-                background: #333;
-              }
-
-              &.githubRepoLink {
-                background: #222;
-                margin: 5px;
-              }
-
-              &:disabled {
-                opacity: 80%;
-                cursor: not-allowed;
-              }
-            }
-          }
+        .contact-info-main {
+          font-size: 0.8em;
+          color: gray;
         }
       }
     }
