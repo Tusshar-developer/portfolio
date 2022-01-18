@@ -1,5 +1,0 @@
-sehaj-timetable.netlify.app/
-tusshar-rock-paper-scissors.netlify.app/
-greedy-pig-game.netlify.app/
-github.com/Tusshar-developer/Bored-API
-https://github.com/Tusshar-developer/sudoku-solver-flask
