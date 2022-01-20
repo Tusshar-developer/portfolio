@@ -25,6 +25,7 @@ body {
   font-family: circular, sans-serif;
   color: #5934f6;
   padding-bottom: 10rem;
+  overflow-x: hidden;
 }
 body header {
   margin-bottom: 3rem;
@@ -41,16 +42,26 @@ body header .navbar .nav-link {
   position: relative;
   width: min-content;
 }
-body header .navbar .nav-link.active::after {
+body header .navbar .nav-link::after {
   content: "";
   width: 120%;
   height: 70%;
   background: #e4fbf3;
-  display: block;
   position: absolute;
-  top: 50%;
+  bottom: -30%;
   right: -10%;
   z-index: -1;
+  display: block;
+  opacity: 0;
+  transition: 0.3s;
+}
+body header .navbar .nav-link.active::after {
+  opacity: 1;
+}
+body header .navbar .nav-link:hover::after {
+  opacity: 1;
+  width: 140%;
+  height: 85%;
 }
 body header .icon {
   position: relative;
@@ -158,8 +169,9 @@ body main .overview .intro {
 }
 body main .featured-work {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
+  flex-wrap: wrap;
 }
 body main .featured-work::before {
   content: "FEATURED WORK";
@@ -187,12 +199,14 @@ body main .featured-work::after {
 }
 body main .box {
   text-decoration: none;
-  margin-right: 5px;
   min-height: 250px;
   border: 1px solid #c4bbff;
   padding: 2.5rem;
   position: relative;
   background: linear-gradient(35deg, #f9f4ff 0%, rgba(255, 255, 255, 0) 65%);
+  margin-top: 3rem;
+  width: 48.5%;
+  min-width: 500px;
 }
 body main .box::before {
   content: "";
@@ -203,15 +217,6 @@ body main .box::before {
   opacity: 0;
   transition: 0.5s;
   z-index: -1;
-}
-body main .box:hover::before {
-  opacity: 1;
-}
-body main .box:hover .project-description {
-  opacity: 0.8;
-}
-body main .box:hover .project-footer .date {
-  opacity: 0.4;
 }
 body main .box .project-title {
   font-size: 1.5rem;
@@ -241,27 +246,33 @@ body main .box .project-footer .link {
 body main .box .project-footer .link::after {
   content: "";
   height: 50%;
-  width: 104%;
+  width: 105%;
   display: block;
   position: absolute;
-  top: 80%;
+  bottom: -10%;
   right: -2%;
-  background: #f7f3ff;
+  background: #e5d9ff;
   z-index: -1;
+  transition: 0.5s;
 }
-body main .box .box-2 {
-  margin-right: 0;
-  margin-left: 5px;
+body main .box:hover::before {
+  opacity: 1;
 }
-body main .box .box-2:hover .project-description {
+body main .box:hover .project-description {
+  opacity: 0.8;
+}
+body main .box:hover .project-footer .date {
+  opacity: 0.4;
+}
+body main .box:hover .link::after {
+  height: 80%;
+  width: 140%;
+}
+body main .box.box-2:hover .project-description {
   opacity: 1 !important;
 }
-body main .box .box-2:hover .project-footer .date {
+body main .box.box-2:hover .project-footer .date {
   opacity: 1 !important;
-}
-body main .box.flex-row {
-  width: 48.5%;
-  min-width: 300px;
 }
 body main .box.not-released {
   cursor: not-allowed;
@@ -344,9 +355,10 @@ body main .icon .target .Cross.Cross--right {
 }
 body main .selected-work {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
-  margin-bottom: 3rem;
+  width: 80vw;
+  flex-wrap: wrap;
 }
 body main .selected-work::before {
   content: "SELECTED WORK";
@@ -377,12 +389,14 @@ body main .selected-work.bottom-row {
 }
 body main .selected-work .work-section {
   width: 30% !important;
+  min-width: 300px !important;
   text-decoration: none;
   margin-right: 5px;
   min-height: 250px;
   border: 1px solid #ebebec;
   padding: 2.5rem;
   position: relative;
+  margin-top: 3rem;
 }
 body main .selected-work .work-section::before {
   content: "";
@@ -423,16 +437,21 @@ body main .selected-work .work-section .project-footer .link {
 body main .selected-work .work-section .project-footer .link::after {
   content: "";
   height: 50%;
-  width: 104%;
+  width: 105%;
   display: block;
   position: absolute;
-  top: 80%;
+  bottom: -10%;
   right: -2%;
-  background: #f7f3ff;
+  background: #e5d9ff;
+  transition: 0.5s;
   z-index: -1;
 }
 body main .selected-work .work-section:hover::before {
   opacity: 1;
+}
+body main .selected-work .work-section:hover .link::after {
+  height: 80%;
+  width: 140%;
 }
 body main .selected-work .work-section.not-released {
   background: #f8f8f8;
@@ -574,14 +593,19 @@ body footer .contactInfo .underlined-link {
 }
 body footer .contactInfo .underlined-link::after {
   content: "";
-  width: 110%;
-  height: 70%;
+  width: 105%;
+  height: 50%;
   background: #e4fbf3;
   display: block;
   position: absolute;
-  top: 60%;
-  right: -5%;
+  bottom: -10%;
+  right: -2%;
   z-index: -1;
+  transition: 0.5s;
+}
+body footer .contactInfo .underlined-link:hover::after {
+  height: 80%;
+  width: 120%;
 }
 
 /*# sourceMappingURL=style.css.map */
