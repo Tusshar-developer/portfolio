@@ -206,7 +206,7 @@ body main .box {
   background: linear-gradient(35deg, #f9f4ff 0%, rgba(255, 255, 255, 0) 65%);
   margin-top: 3rem;
   width: 48.5%;
-  min-width: 500px;
+  min-width: 300px;
 }
 body main .box::before {
   content: "";
@@ -273,6 +273,13 @@ body main .box.box-2:hover .project-description {
 }
 body main .box.box-2:hover .project-footer .date {
   opacity: 1 !important;
+}
+@media only screen and (max-width: 1300px) {
+  body main .box {
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 3rem;
+  }
 }
 body main .box.not-released {
   cursor: not-allowed;
@@ -509,6 +516,13 @@ body main .selected-work .work-section .corner.bottomRightCorner::before {
 body main .selected-work .work-section .corner.bottomRightCorner::after {
   top: 1px;
   left: -15px;
+}
+@media only screen and (max-width: 1010px) {
+  body main .selected-work .work-section {
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 3rem;
+  }
 }
 body footer {
   margin-top: 5rem;
