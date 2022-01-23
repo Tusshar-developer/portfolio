@@ -709,11 +709,12 @@ body {
       border-top: 1px solid #ebe9f4;
       left: 50%;
       transform: translateX(-50%);
-      width: 40vw;
-      min-width: 600px;
+      width: 80vw;
 
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
 
       font-family: "GT Pressura Mono";
       font-size: 18px;
@@ -721,6 +722,8 @@ body {
       .phoneNum {
         text-decoration: none;
         color: #000;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
       }
 
       .underlined-link {
@@ -728,6 +731,8 @@ body {
         text-decoration: none;
         position: relative;
         width: max-content;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
 
         &::after {
           content: "";
