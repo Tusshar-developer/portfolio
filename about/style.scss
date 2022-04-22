@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "MesloLGS NF";
+  src: url("/assets/fonts/MesloLGS NF Regular.ttf");
+}
+
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url("/assets/fonts/GT-Pressura-Mono-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: circular;
+  src: url("/assets/fonts/Circular.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Variables
+$mainBkg: #fff;
+$primaryClr: #5934f6;
+$secondaryClr: #e4fbf3;
+
+::selection {
+  background: $secondaryClr;
+}
+
+body {
+  background: $mainBkg;
+  font-family: circular, sans-serif;
+  // color: ;
+  padding-bottom: 10rem;
+  overflow-x: hidden;
+
+  header {
+    margin-bottom: 3rem;
+    background: $primaryClr;
+    color: white;
+    height: 500px;
+    position: relative;
+
+    .navbar {
+      text-align: right;
+      padding: 2.5rem;
+      padding-bottom: 0;
+
+      .nav-link {
+        margin-right: 1.5rem;
+        color: white;
+        text-decoration: none;
+        position: relative;
+        width: min-content;
+
+        &::after {
+          content: "";
+          width: 120%;
+          height: 70%;
+          background: #e4fbf3;
+          position: absolute;
+          bottom: -30%;
+          right: -10%;
+          z-index: 5;
+          display: block;
+          opacity: 0;
+          transition: 0.3s;
+          border-radius: 2px;
+        }
+
+        &.active::after {
+          opacity: 0.5;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 0.7;
+            width: 140%;
+            height: 85%;
+          }
+        }
+      }
+    }
+
+    .intro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  main {
+    display: flex;
+
+    .left {
+      width: 55vw;
+      margin: 100px auto auto 15vw;
+
+      section {
+        margin-bottom: 100px;
+
+        .sectionTitle {
+          font-size: clamp(2rem, 2vw, 3rem);
+          margin-bottom: 50px;
+        }
+      }
+
+      .content {
+        .workplace {
+          font-size: 1.3em;
+        }
+
+        .dates {
+          font-size: 0.9em;
+          margin-bottom: 20px;
+        }
+
+        .tasks {
+          margin-left: 30px;
+        }
+
+        .eduSource {
+          margin-bottom: 10px;
+        }
+
+        .set {
+          margin-bottom: 30px;
+
+          .skillSet {
+            margin-left: 30px;
+            width: 100%;
+
+            li {
+              position: relative;
+
+              div {
+                margin: 5px 0 10px 0;
+                display: flex;
+
+                &::before {
+                  content: "";
+                  height: 7px;
+                  width: 160px;
+                  display: block;
+                  // position: ;
+                  background: #000;
+                  border-radius: 5px 0 0 5px;
+                }
+
+                &::after {
+                  content: "";
+                  height: 7px;
+                  width: 40px;
+                  display: block;
+                  // position: ;
+                  background: #cccccc;
+                  border-radius: 0 5px 5px 0;
+                }
+
+                &.six {
+                  &::before {
+                    width: 120px;
+                  }
+                  &::after {
+                    width: 80px;
+                  }
+                }
+
+                &.seven {
+                  &::before {
+                    width: 140px;
+                  }
+                  &::after {
+                    width: 60px;
+                  }
+                }
+
+                &.eight {
+                  &::before {
+                    width: 160px;
+                  }
+                  &::after {
+                    width: 40px;
+                  }
+                }
+
+                &.nine {
+                  &::before {
+                    width: 180px;
+                  }
+                  &::after {
+                    width: 20px;
+                  }
+                }
+
+                &.red {
+                  &::before {
+                    background: #ff6e6e;
+                  }
+                }
+
+                &.blue {
+                  &::before {
+                    background: #6e6eff;
+                  }
+                }
+
+                &.green {
+                  &::before {
+                    background: #6eff6e;
+                  }
+                }
+
+                &.navy {
+                  &::before {
+                    background: #000080;
+                  }
+                }
+
+                &.purple {
+                  &::before {
+                    background: #a020f0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

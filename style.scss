@@ -54,7 +54,7 @@ body {
           content: "";
           width: 120%;
           height: 70%;
-          background: $secondaryClr;
+          background: $primaryClr;
           position: absolute;
           bottom: -30%;
           right: -10%;
@@ -62,15 +62,16 @@ body {
           display: block;
           opacity: 0;
           transition: 0.3s;
+          border-radius: 2px;
         }
 
         &.active::after {
-          opacity: 1;
+          opacity: 0.3;
         }
 
         &:hover {
           &::after {
-            opacity: 1;
+            opacity: 0.5;
             width: 140%;
             height: 85%;
           }
