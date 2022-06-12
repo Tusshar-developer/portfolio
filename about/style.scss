@@ -204,6 +204,12 @@ body {
                 }
               }
 
+              &.reactblue {
+                &::before {
+                  background: #61dafb;
+                }
+              }
+
               &.green {
                 &::before {
                   background: #6eff6e;
