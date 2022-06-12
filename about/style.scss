@@ -198,6 +198,12 @@ body {
                 }
               }
 
+              &.yellow {
+                &::before {
+                  background: #eaea00;
+                }
+              }
+
               &.blue {
                 &::before {
                   background: #6e6eff;

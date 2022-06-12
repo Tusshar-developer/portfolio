@@ -154,6 +154,9 @@ body main .content .set .skillSet li div.nine::after {
 body main .content .set .skillSet li div.red::before {
   background: #ff6e6e;
 }
+body main .content .set .skillSet li div.yellow::before {
+  background: #eaea00;
+}
 body main .content .set .skillSet li div.blue::before {
   background: #6e6eff;
 }
