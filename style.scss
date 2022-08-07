@@ -36,149 +36,152 @@ body {
   overflow-x: hidden;
 
   header {
-    margin-bottom: 3rem;
+    margin-bottom: calc(3rem + 200px);
 
-    .navbar {
-      text-align: right;
-      padding: 2.5rem;
-      border-bottom: 1px solid #ebe9f4;
-
-      .nav-link {
-        margin-right: 1.5rem;
-        color: $primaryClr;
-        text-decoration: none;
-        position: relative;
-        width: min-content;
-
-        &::after {
-          content: "";
-          width: 120%;
-          height: 70%;
-          background: $primaryClr;
-          position: absolute;
-          bottom: -30%;
-          right: -10%;
-          z-index: -1;
-          display: block;
-          opacity: 0;
-          transition: 0.3s;
-          border-radius: 2px;
-        }
-
-        &.active::after {
-          opacity: 0.3;
-        }
-
-        &:hover {
-          &::after {
-            opacity: 0.5;
-            width: 140%;
-            height: 85%;
-          }
-        }
-      }
+    .line {
+      height: 1px;
+      width: 100vw;
+      background: #ebe9f4;
+      display: block;
+      position: absolute;
+      top: 96px;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
     }
 
     .icon {
-      position: relative;
-      bottom: 50px;
-      width: 100px;
-      height: 60px;
-      margin: auto;
-      top: -5px;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
       background: white;
 
-      span {
-        width: 6px;
-        height: 6px;
-        border: 1px solid $primaryClr;
+      &::before {
+        content: "";
+        height: calc(100% + 30px);
+        width: calc(100% + 30px);
+        background: white;
         position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-        &.top {
-          top: -18px;
-        }
+      span {
+        position: absolute;
+        height: 7px;
+        width: 7px;
+        border: 1px solid $primaryClr;
+      }
 
-        &.center {
-          top: 0;
-        }
+      .left {
+        left: 0;
+      }
 
-        &.bottom {
-          top: 18px;
-        }
+      .middle {
+        left: 50%;
+      }
 
-        &.left {
-          left: 28px;
-        }
+      .right {
+        left: 100%;
+      }
 
-        &.middle {
-          left: 46px;
-        }
+      .center.left {
+        top: 50%;
+        transform: translateY(-50%);
+      }
 
-        &.right {
-          left: 65px;
-        }
+      .center.right {
+        top: 50%;
+        transform: translate(-100%, -50%);
+      }
+
+      .top.left {
+        top: 0;
+      }
+
+      .top.middle {
+        top: 0;
+        transform: translateX(-50%);
+      }
+
+      .top.right {
+        top: 0;
+        transform: translateX(-100%);
+      }
+
+      .bottom {
+        top: 100%;
+        transform: translateY(-100%);
+      }
+
+      .bottom.middle {
+        top: 100%;
+        transform: translate(-50%, -100%);
+      }
+
+      .bottom.right {
+        top: 100%;
+        transform: translate(-100%, -100%);
       }
 
       .target {
-        margin: auto;
         position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        position: relative;
-        width: 7px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         height: 7px;
-        overflow: visible;
-        -webkit-transform-origin: 50% 50%;
-        -ms-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
+        width: 7px;
+        border: 1px solid $primaryClr;
+        border-radius: 50%;
 
-        .Circle {
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          width: 7px;
-          height: 7px;
+        &::before,
+        &::after {
+          content: "";
+          height: 1px;
+          width: 11px;
+          background: $primaryClr;
+          display: block;
           position: absolute;
-          left: 0;
-          top: 0;
-          border: 1px solid #d0d0d0;
-          background: white;
-          z-index: 1;
-          border-color: #5d39f6;
         }
 
-        .Circle:before {
-          width: 1px;
-          height: 1px;
+        &::before {
           left: 50%;
           top: 50%;
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          margin: -0.5px 0 0 -0.5px;
-          position: absolute;
-          background: #c3c3c3;
+          transform: translate(-50%, -50%);
+        }
+
+        &::after {
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+
+      .dot {
+        background: white;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+
+        &::before {
           content: "";
+          height: 1px;
+          width: 1px;
           background: $primaryClr;
-        }
-
-        .Cross {
+          display: block;
           position: absolute;
-          z-index: 0;
-        }
-
-        .Cross.Cross--left {
-          height: 11px;
-          border-right: 1px solid #c3c3c3;
-          left: 3px;
-          top: -2px;
-          border-color: $primaryClr;
-        }
-
-        .Cross.Cross--right {
-          width: 11px;
-          border-top: 1px solid #c3c3c3;
-          left: -2px;
-          top: 3px;
-          border-color: $primaryClr;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }
@@ -197,6 +200,42 @@ body {
       .intro {
         font-weight: 500;
         font-size: 1.9rem;
+      }
+    }
+
+    .aboutMe {
+      position: relative;
+      margin-block: 10rem 5rem;
+
+      p {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+      }
+
+      &::before {
+        content: "ABOUT ME";
+        height: 30px;
+        width: max-content;
+        display: block;
+        font-family: "GT Pressura Mono", monospace;
+        position: absolute;
+        left: -4vw;
+        top: 50%;
+        transform: translateX(-50%) rotate(-90deg);
+        color: #ddd5fd;
+      }
+      &::after {
+        content: "ABOUT ME";
+        height: 30px;
+        width: max-content;
+        display: block;
+        font-family: "GT Pressura Mono", monospace;
+        position: absolute;
+        left: calc(100% + 4vw);
+        top: 50%;
+        transform: translateX(-50%) rotate(90deg);
+        color: #ddd5fd;
       }
     }
 
@@ -359,296 +398,201 @@ body {
       }
     }
 
-    .icon {
+    .separator {
+      margin-block: 6rem 3rem;
+      margin-inline: auto;
+      height: 7px;
+      width: 7px;
+      border: 1px solid $primaryClr;
+      border-radius: 50%;
+      z-index: -1;
       position: relative;
-      bottom: 50px;
-      width: 100px;
-      height: 60px;
-      top: 4rem;
-      margin: auto;
-      margin-bottom: 4rem;
-      background: white;
 
-      .target {
-        margin: auto;
+      &::before,
+      &::after {
+        content: "";
+        height: 1px;
+        width: 11px;
+        background: $primaryClr;
+        display: block;
         position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        position: relative;
-        width: 7px;
-        height: 7px;
-        overflow: visible;
-        -webkit-transform-origin: 50% 50%;
-        -ms-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-
-        .Circle {
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          width: 7px;
-          height: 7px;
-          position: absolute;
-          left: 0;
-          top: 0;
-          border: 1px solid #d0d0d0;
-          background: white;
-          z-index: 1;
-          border-color: #5d39f6;
-        }
-
-        .Circle:before {
-          width: 1px;
-          height: 1px;
-          left: 50%;
-          top: 50%;
-          -webkit-border-radius: 50%;
-          border-radius: 50%;
-          margin: -0.5px 0 0 -0.5px;
-          position: absolute;
-          background: #c3c3c3;
-          content: "";
-          background: $primaryClr;
-        }
-
-        .Cross {
-          position: absolute;
-          z-index: 0;
-        }
-
-        .Cross.Cross--left {
-          height: 11px;
-          border-right: 1px solid #c3c3c3;
-          left: 3px;
-          top: -2px;
-          border-color: $primaryClr;
-        }
-
-        .Cross.Cross--right {
-          width: 11px;
-          border-top: 1px solid #c3c3c3;
-          left: -2px;
-          top: 3px;
-          border-color: $primaryClr;
-        }
+        z-index: -1;
       }
-    }
-
-    .selected-work {
-      display: flex;
-      justify-content: space-around;
-      position: relative;
-      width: 80vw;
-      flex-wrap: wrap;
 
       &::before {
-        content: "SELECTED WORK";
-        height: 30px;
-        width: max-content;
-        display: block;
-        font-family: "GT Pressura Mono", monospace;
-        position: absolute;
-        left: -4vw;
+        left: 50%;
         top: 50%;
-        transform: translateX(-50%) rotate(-90deg);
-        color: #ddd5fd;
+        transform: translate(-50%, -50%);
       }
 
       &::after {
-        content: "SELECTED WORK";
-        height: 30px;
-        width: max-content;
-        display: block;
-        font-family: "GT Pressura Mono", monospace;
-        position: absolute;
-        left: calc(100% + 4vw);
+        left: 50%;
         top: 50%;
-        transform: translateX(-50%) rotate(90deg);
-        color: #ddd5fd;
+        transform: translate(-50%, -50%) rotate(90deg);
       }
 
-      &.bottom-row {
-        justify-content: space-around;
-      }
-
-      .work-section {
-        width: 30% !important;
-        min-width: 300px !important;
-        text-decoration: none;
-        margin-right: 5px;
-        min-height: 250px;
-        border: 1px solid #ebebec;
-        padding: 2.5rem;
-        position: relative;
-        margin-top: 3rem;
+      .dot {
+        background: white;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
 
         &::before {
           content: "";
-          inset: 0 0 0 0;
-          background: linear-gradient(
-            140deg,
-            #f9f4ff 5%,
-            rgba(255, 255, 255, 0) 65%
-          );
+          height: 1px;
+          width: 1px;
+          background: $primaryClr;
           display: block;
           position: absolute;
-          opacity: 0;
-          transition: 0.5s;
-          z-index: -1;
-        }
-
-        .project-title {
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-          color: #1a2fa9;
-        }
-
-        .project-description {
-          font-family: "GT Pressura Mono", monospace;
-          color: #5f5f5f;
-          transition: 0.8s;
-        }
-
-        .project-footer {
-          position: absolute;
-          left: 2.5rem;
-          bottom: 2.5rem;
-          display: flex;
-          justify-content: space-between;
-          width: calc(100% - 5rem);
-          font-family: "GT Pressura Mono", monospace;
-          color: #1a2fa9;
-
-          .date {
-            transition: 0.5s;
-          }
-
-          .link {
-            position: relative;
-
-            &::after {
-              content: "";
-              height: 50%;
-              width: 105%;
-              display: block;
-              position: absolute;
-              bottom: -10%;
-              right: -2%;
-              background: #e5d9ff;
-              transition: 0.5s;
-              z-index: -1;
-            }
-          }
-        }
-
-        &:hover {
-          &::before {
-            opacity: 1;
-          }
-
-          .link::after {
-            height: 80%;
-            width: 140%;
-          }
-        }
-
-        &.not-released {
-          background: #f8f8f8;
-          border: none;
-          cursor: not-allowed;
-
-          &::before {
-            display: none;
-          }
-
-          .project-description {
-            color: gray;
-          }
-
-          .not-released-message {
-            color: gray;
-          }
-        }
-
-        .corner {
-          position: absolute;
-          height: 5px;
-          width: 5px;
-          border: 1px solid #b8adff;
-
-          &::before,
-          &::after {
-            content: "";
-            position: absolute;
-            background: #b8adff;
-          }
-
-          &::before {
-            height: 15px;
-            width: 1px;
-          }
-
-          &::after {
-            width: 15px;
-            height: 1px;
-          }
-
-          &.topLeftCorner {
-            top: -3px;
-            left: -3px;
-
-            &::before {
-              top: 4px;
-              left: 1px;
-            }
-
-            &::after {
-              top: 1px;
-              left: 4px;
-            }
-          }
-
-          &.bottomRightCorner {
-            bottom: -3px;
-            right: -3px;
-
-            &::before {
-              top: -15px;
-              left: 1px;
-            }
-
-            &::after {
-              top: 1px;
-              left: -15px;
-            }
-          }
-        }
-      }
-
-      @media only screen and (max-width: 1010px) {
-        .work-section {
-          width: 100% !important;
-          max-width: 100%;
-          margin-top: 3rem;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }
   }
 
-  footer {
-    margin-top: 5rem;
+  .selected-work {
+    display: flex;
+    justify-content: space-around;
     position: relative;
+    width: 80vw;
+    flex-wrap: wrap;
 
-    .logo {
+    &::before {
+      content: "SELECTED WORK";
+      height: 30px;
+      width: max-content;
+      display: block;
+      font-family: "GT Pressura Mono", monospace;
       position: absolute;
-      width: 17px;
-      height: 17px;
-      padding: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-      background: white;
+      left: -4vw;
+      top: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      color: #ddd5fd;
+    }
 
-      .bracket {
+    &::after {
+      content: "SELECTED WORK";
+      height: 30px;
+      width: max-content;
+      display: block;
+      font-family: "GT Pressura Mono", monospace;
+      position: absolute;
+      left: calc(100% + 4vw);
+      top: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      color: #ddd5fd;
+    }
+
+    &.bottom-row {
+      justify-content: space-around;
+    }
+
+    .work-section {
+      width: 30% !important;
+      min-width: 300px !important;
+      text-decoration: none;
+      margin-right: 5px;
+      min-height: 250px;
+      border: 1px solid #ebebec;
+      padding: 2.5rem;
+      position: relative;
+      margin-top: 3rem;
+
+      &::before {
+        content: "";
+        inset: 0 0 0 0;
+        background: linear-gradient(
+          140deg,
+          #f9f4ff 5%,
+          rgba(255, 255, 255, 0) 65%
+        );
+        display: block;
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      .project-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #1a2fa9;
+      }
+
+      .project-description {
+        font-family: "GT Pressura Mono", monospace;
+        color: #5f5f5f;
+        transition: 0.8s;
+      }
+
+      .project-footer {
+        position: absolute;
+        left: 2.5rem;
+        bottom: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 5rem);
+        font-family: "GT Pressura Mono", monospace;
+        color: #1a2fa9;
+
+        .date {
+          transition: 0.5s;
+        }
+
+        .link {
+          position: relative;
+
+          &::after {
+            content: "";
+            height: 50%;
+            width: 105%;
+            display: block;
+            position: absolute;
+            bottom: -10%;
+            right: -2%;
+            background: #e5d9ff;
+            transition: 0.5s;
+            z-index: -1;
+          }
+        }
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+
+        .link::after {
+          height: 80%;
+          width: 140%;
+        }
+      }
+
+      &.not-released {
+        background: #f8f8f8;
+        border: none;
+        cursor: not-allowed;
+
+        &::before {
+          display: none;
+        }
+
+        .project-description {
+          color: gray;
+        }
+
+        .not-released-message {
+          color: gray;
+        }
+      }
+
+      .corner {
         position: absolute;
         height: 5px;
         width: 5px;
@@ -662,18 +606,18 @@ body {
         }
 
         &::before {
-          height: 20px;
+          height: 15px;
           width: 1px;
         }
 
         &::after {
-          width: 20px;
+          width: 15px;
           height: 1px;
         }
 
-        &.leftBracket {
-          top: 22px;
-          left: 22px;
+        &.topLeftCorner {
+          top: -3px;
+          left: -3px;
 
           &::before {
             top: 4px;
@@ -686,73 +630,207 @@ body {
           }
         }
 
-        &.rightBracket {
-          bottom: 22px;
-          right: 22px;
+        &.bottomRightCorner {
+          bottom: -3px;
+          right: -3px;
 
           &::before {
-            top: -20px;
+            top: -15px;
             left: 1px;
           }
 
           &::after {
             top: 1px;
-            left: -20px;
+            left: -15px;
           }
         }
       }
     }
 
-    .contactInfo {
-      position: absolute;
-      top: 2rem;
-      padding: 3rem;
-      border-top: 1px solid #ebe9f4;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80vw;
+    @media only screen and (max-width: 1010px) {
+      .work-section {
+        width: 100% !important;
+        max-width: 100%;
+        margin-top: 3rem;
+      }
+    }
+  }
 
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+  .technologies-used {
+    position: relative;
+    width: 80vw;
+    padding-top: 3rem;
+    text-align: center;
+
+    .sectionTitle {
+      font-weight: 500;
       text-align: center;
 
-      font-family: "GT Pressura Mono";
-      font-size: 18px;
+      &.upperSpace {
+        margin-top: 3rem;
+      }
+    }
 
-      .phoneNum {
-        text-decoration: none;
-        color: #000;
-        margin-bottom: 0.5rem;
-        margin-right: 0.5rem;
+    &::before {
+      content: "TECH USED";
+      height: 30px;
+      width: max-content;
+      display: block;
+      font-family: "GT Pressura Mono", monospace;
+      position: absolute;
+      left: -4vw;
+      top: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      color: #ddd5fd;
+    }
+
+    &::after {
+      content: "TECH USED";
+      height: 30px;
+      width: max-content;
+      display: block;
+      font-family: "GT Pressura Mono", monospace;
+      position: absolute;
+      left: calc(100% + 4vw);
+      top: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      color: #ddd5fd;
+    }
+
+    .tech-group {
+      width: 50vw;
+      height: 60px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-inline: auto;
+      margin-top: 20px;
+
+      svg {
+        height: 50px;
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 5rem;
+  position: relative;
+
+  .logo {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    padding: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background: white;
+
+    .bracket {
+      position: absolute;
+      height: 5px;
+      width: 5px;
+      border: 1px solid #b8adff;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background: #b8adff;
       }
 
-      .underlined-link {
-        color: $primaryClr;
-        text-decoration: none;
-        position: relative;
-        width: max-content;
-        margin-bottom: 0.5rem;
-        margin-right: 0.5rem;
+      &::before {
+        height: 20px;
+        width: 1px;
+      }
 
-        &::after {
-          content: "";
-          width: 105%;
-          height: 50%;
-          background: $secondaryClr;
-          display: block;
-          position: absolute;
-          bottom: -10%;
-          right: -2%;
-          z-index: -1;
-          transition: 0.5s;
+      &::after {
+        width: 20px;
+        height: 1px;
+      }
+
+      &.leftBracket {
+        top: 22px;
+        left: 22px;
+
+        &::before {
+          top: 4px;
+          left: 1px;
         }
 
-        &:hover {
-          &::after {
-            height: 80%;
-            width: 120%;
-          }
+        &::after {
+          top: 1px;
+          left: 4px;
+        }
+      }
+
+      &.rightBracket {
+        bottom: 22px;
+        right: 22px;
+
+        &::before {
+          top: -20px;
+          left: 1px;
+        }
+
+        &::after {
+          top: 1px;
+          left: -20px;
+        }
+      }
+    }
+  }
+
+  .contactInfo {
+    position: absolute;
+    top: 2rem;
+    padding: 3rem;
+    border-top: 1px solid #ebe9f4;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+
+    font-family: "GT Pressura Mono";
+    font-size: 18px;
+
+    .phoneNum {
+      text-decoration: none;
+      color: #000;
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .underlined-link {
+      color: $primaryClr;
+      text-decoration: none;
+      position: relative;
+      width: max-content;
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
+
+      &::after {
+        content: "";
+        width: 105%;
+        height: 50%;
+        background: $secondaryClr;
+        display: block;
+        position: absolute;
+        bottom: -10%;
+        right: -2%;
+        z-index: -1;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        &::after {
+          height: 80%;
+          width: 120%;
         }
       }
     }
