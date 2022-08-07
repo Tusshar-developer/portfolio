@@ -28,131 +28,133 @@ body {
   overflow-x: hidden;
 }
 body header {
-  margin-bottom: 3rem;
+  margin-bottom: calc(3rem + 200px);
 }
-body header .navbar {
-  text-align: right;
-  padding: 2.5rem;
-  border-bottom: 1px solid #ebe9f4;
-}
-body header .navbar .nav-link {
-  margin-right: 1.5rem;
-  color: #5934f6;
-  text-decoration: none;
-  position: relative;
-  width: min-content;
-}
-body header .navbar .nav-link::after {
-  content: "";
-  width: 120%;
-  height: 70%;
-  background: #5934f6;
-  position: absolute;
-  bottom: -30%;
-  right: -10%;
-  z-index: -1;
+body header .line {
+  height: 1px;
+  width: 100vw;
+  background: #ebe9f4;
   display: block;
-  opacity: 0;
-  transition: 0.3s;
-  border-radius: 2px;
-}
-body header .navbar .nav-link.active::after {
-  opacity: 0.3;
-}
-body header .navbar .nav-link:hover::after {
-  opacity: 0.5;
-  width: 140%;
-  height: 85%;
+  position: absolute;
+  top: 96px;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
 }
 body header .icon {
-  position: relative;
-  bottom: 50px;
-  width: 100px;
-  height: 60px;
-  margin: auto;
-  top: -5px;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
   background: white;
+}
+body header .icon::before {
+  content: "";
+  height: calc(100% + 30px);
+  width: calc(100% + 30px);
+  background: white;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 body header .icon span {
-  width: 6px;
-  height: 6px;
-  border: 1px solid #5934f6;
   position: absolute;
+  height: 7px;
+  width: 7px;
+  border: 1px solid #5934f6;
 }
-body header .icon span.top {
-  top: -18px;
+body header .icon .left {
+  left: 0;
 }
-body header .icon span.center {
+body header .icon .middle {
+  left: 50%;
+}
+body header .icon .right {
+  left: 100%;
+}
+body header .icon .center.left {
+  top: 50%;
+  transform: translateY(-50%);
+}
+body header .icon .center.right {
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+body header .icon .top.left {
   top: 0;
 }
-body header .icon span.bottom {
-  top: 18px;
+body header .icon .top.middle {
+  top: 0;
+  transform: translateX(-50%);
 }
-body header .icon span.left {
-  left: 28px;
+body header .icon .top.right {
+  top: 0;
+  transform: translateX(-100%);
 }
-body header .icon span.middle {
-  left: 46px;
+body header .icon .bottom {
+  top: 100%;
+  transform: translateY(-100%);
 }
-body header .icon span.right {
-  left: 65px;
+body header .icon .bottom.middle {
+  top: 100%;
+  transform: translate(-50%, -100%);
+}
+body header .icon .bottom.right {
+  top: 100%;
+  transform: translate(-100%, -100%);
 }
 body header .icon .target {
-  margin: auto;
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  position: relative;
-  width: 7px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 7px;
-  overflow: visible;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-body header .icon .target .Circle {
-  -webkit-border-radius: 50%;
+  width: 7px;
+  border: 1px solid #5934f6;
   border-radius: 50%;
-  width: 7px;
-  height: 7px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: 1px solid #d0d0d0;
-  background: white;
-  z-index: 1;
-  border-color: #5d39f6;
 }
-body header .icon .target .Circle:before {
-  width: 1px;
+body header .icon .target::before, body header .icon .target::after {
+  content: "";
   height: 1px;
+  width: 11px;
+  background: #5934f6;
+  display: block;
+  position: absolute;
+}
+body header .icon .target::before {
   left: 50%;
   top: 50%;
-  -webkit-border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+body header .icon .target::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+body header .icon .dot {
+  background: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  margin: -0.5px 0 0 -0.5px;
-  position: absolute;
-  background: #c3c3c3;
+}
+body header .icon .dot::before {
   content: "";
+  height: 1px;
+  width: 1px;
   background: #5934f6;
-}
-body header .icon .target .Cross {
+  display: block;
   position: absolute;
-  z-index: 0;
-}
-body header .icon .target .Cross.Cross--left {
-  height: 11px;
-  border-right: 1px solid #c3c3c3;
-  left: 3px;
-  top: -2px;
-  border-color: #5934f6;
-}
-body header .icon .target .Cross.Cross--right {
-  width: 11px;
-  border-top: 1px solid #c3c3c3;
-  left: -2px;
-  top: 3px;
-  border-color: #5934f6;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 body main {
   width: 80vw;
@@ -167,6 +169,39 @@ body main .overview {
 body main .overview .intro {
   font-weight: 500;
   font-size: 1.9rem;
+}
+body main .aboutMe {
+  position: relative;
+  margin-block: 10rem 5rem;
+}
+body main .aboutMe p {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+body main .aboutMe::before {
+  content: "ABOUT ME";
+  height: 30px;
+  width: max-content;
+  display: block;
+  font-family: "GT Pressura Mono", monospace;
+  position: absolute;
+  left: -4vw;
+  top: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+  color: #ddd5fd;
+}
+body main .aboutMe::after {
+  content: "ABOUT ME";
+  height: 30px;
+  width: max-content;
+  display: block;
+  font-family: "GT Pressura Mono", monospace;
+  position: absolute;
+  left: calc(100% + 4vw);
+  top: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  color: #ddd5fd;
 }
 body main .featured-work {
   display: flex;
@@ -294,81 +329,64 @@ body main .box.not-released .project-description,
 body main .box.not-released .project-footer {
   color: gray !important;
 }
-body main .icon {
-  position: relative;
-  bottom: 50px;
-  width: 100px;
-  height: 60px;
-  top: 4rem;
-  margin: auto;
-  margin-bottom: 4rem;
-  background: white;
-}
-body main .icon .target {
-  margin: auto;
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  position: relative;
-  width: 7px;
+body main .separator {
+  margin-block: 6rem 3rem;
+  margin-inline: auto;
   height: 7px;
-  overflow: visible;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-body main .icon .target .Circle {
-  -webkit-border-radius: 50%;
+  width: 7px;
+  border: 1px solid #5934f6;
   border-radius: 50%;
-  width: 7px;
-  height: 7px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: 1px solid #d0d0d0;
-  background: white;
-  z-index: 1;
-  border-color: #5d39f6;
+  z-index: -1;
+  position: relative;
 }
-body main .icon .target .Circle:before {
-  width: 1px;
+body main .separator::before, body main .separator::after {
+  content: "";
   height: 1px;
+  width: 11px;
+  background: #5934f6;
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+body main .separator::before {
   left: 50%;
   top: 50%;
-  -webkit-border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+body main .separator::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+body main .separator .dot {
+  background: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  margin: -0.5px 0 0 -0.5px;
-  position: absolute;
-  background: #c3c3c3;
+}
+body main .separator .dot::before {
   content: "";
+  height: 1px;
+  width: 1px;
   background: #5934f6;
-}
-body main .icon .target .Cross {
+  display: block;
   position: absolute;
-  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-body main .icon .target .Cross.Cross--left {
-  height: 11px;
-  border-right: 1px solid #c3c3c3;
-  left: 3px;
-  top: -2px;
-  border-color: #5934f6;
-}
-body main .icon .target .Cross.Cross--right {
-  width: 11px;
-  border-top: 1px solid #c3c3c3;
-  left: -2px;
-  top: 3px;
-  border-color: #5934f6;
-}
-body main .selected-work {
+body .selected-work {
   display: flex;
   justify-content: space-around;
   position: relative;
   width: 80vw;
   flex-wrap: wrap;
 }
-body main .selected-work::before {
+body .selected-work::before {
   content: "SELECTED WORK";
   height: 30px;
   width: max-content;
@@ -380,7 +398,7 @@ body main .selected-work::before {
   transform: translateX(-50%) rotate(-90deg);
   color: #ddd5fd;
 }
-body main .selected-work::after {
+body .selected-work::after {
   content: "SELECTED WORK";
   height: 30px;
   width: max-content;
@@ -392,10 +410,10 @@ body main .selected-work::after {
   transform: translateX(-50%) rotate(90deg);
   color: #ddd5fd;
 }
-body main .selected-work.bottom-row {
+body .selected-work.bottom-row {
   justify-content: space-around;
 }
-body main .selected-work .work-section {
+body .selected-work .work-section {
   width: 30% !important;
   min-width: 300px !important;
   text-decoration: none;
@@ -406,7 +424,7 @@ body main .selected-work .work-section {
   position: relative;
   margin-top: 3rem;
 }
-body main .selected-work .work-section::before {
+body .selected-work .work-section::before {
   content: "";
   inset: 0 0 0 0;
   background: linear-gradient(140deg, #f9f4ff 5%, rgba(255, 255, 255, 0) 65%);
@@ -416,17 +434,17 @@ body main .selected-work .work-section::before {
   transition: 0.5s;
   z-index: -1;
 }
-body main .selected-work .work-section .project-title {
+body .selected-work .work-section .project-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #1a2fa9;
 }
-body main .selected-work .work-section .project-description {
+body .selected-work .work-section .project-description {
   font-family: "GT Pressura Mono", monospace;
   color: #5f5f5f;
   transition: 0.8s;
 }
-body main .selected-work .work-section .project-footer {
+body .selected-work .work-section .project-footer {
   position: absolute;
   left: 2.5rem;
   bottom: 2.5rem;
@@ -436,13 +454,13 @@ body main .selected-work .work-section .project-footer {
   font-family: "GT Pressura Mono", monospace;
   color: #1a2fa9;
 }
-body main .selected-work .work-section .project-footer .date {
+body .selected-work .work-section .project-footer .date {
   transition: 0.5s;
 }
-body main .selected-work .work-section .project-footer .link {
+body .selected-work .work-section .project-footer .link {
   position: relative;
 }
-body main .selected-work .work-section .project-footer .link::after {
+body .selected-work .work-section .project-footer .link::after {
   content: "";
   height: 50%;
   width: 105%;
@@ -454,82 +472,132 @@ body main .selected-work .work-section .project-footer .link::after {
   transition: 0.5s;
   z-index: -1;
 }
-body main .selected-work .work-section:hover::before {
+body .selected-work .work-section:hover::before {
   opacity: 1;
 }
-body main .selected-work .work-section:hover .link::after {
+body .selected-work .work-section:hover .link::after {
   height: 80%;
   width: 140%;
 }
-body main .selected-work .work-section.not-released {
+body .selected-work .work-section.not-released {
   background: #f8f8f8;
   border: none;
   cursor: not-allowed;
 }
-body main .selected-work .work-section.not-released::before {
+body .selected-work .work-section.not-released::before {
   display: none;
 }
-body main .selected-work .work-section.not-released .project-description {
+body .selected-work .work-section.not-released .project-description {
   color: gray;
 }
-body main .selected-work .work-section.not-released .not-released-message {
+body .selected-work .work-section.not-released .not-released-message {
   color: gray;
 }
-body main .selected-work .work-section .corner {
+body .selected-work .work-section .corner {
   position: absolute;
   height: 5px;
   width: 5px;
   border: 1px solid #b8adff;
 }
-body main .selected-work .work-section .corner::before, body main .selected-work .work-section .corner::after {
+body .selected-work .work-section .corner::before, body .selected-work .work-section .corner::after {
   content: "";
   position: absolute;
   background: #b8adff;
 }
-body main .selected-work .work-section .corner::before {
+body .selected-work .work-section .corner::before {
   height: 15px;
   width: 1px;
 }
-body main .selected-work .work-section .corner::after {
+body .selected-work .work-section .corner::after {
   width: 15px;
   height: 1px;
 }
-body main .selected-work .work-section .corner.topLeftCorner {
+body .selected-work .work-section .corner.topLeftCorner {
   top: -3px;
   left: -3px;
 }
-body main .selected-work .work-section .corner.topLeftCorner::before {
+body .selected-work .work-section .corner.topLeftCorner::before {
   top: 4px;
   left: 1px;
 }
-body main .selected-work .work-section .corner.topLeftCorner::after {
+body .selected-work .work-section .corner.topLeftCorner::after {
   top: 1px;
   left: 4px;
 }
-body main .selected-work .work-section .corner.bottomRightCorner {
+body .selected-work .work-section .corner.bottomRightCorner {
   bottom: -3px;
   right: -3px;
 }
-body main .selected-work .work-section .corner.bottomRightCorner::before {
+body .selected-work .work-section .corner.bottomRightCorner::before {
   top: -15px;
   left: 1px;
 }
-body main .selected-work .work-section .corner.bottomRightCorner::after {
+body .selected-work .work-section .corner.bottomRightCorner::after {
   top: 1px;
   left: -15px;
 }
 @media only screen and (max-width: 1010px) {
-  body main .selected-work .work-section {
+  body .selected-work .work-section {
     width: 100% !important;
     max-width: 100%;
     margin-top: 3rem;
   }
 }
-body footer {
+body .technologies-used {
+  position: relative;
+  width: 80vw;
+  padding-top: 3rem;
+  text-align: center;
+}
+body .technologies-used .sectionTitle {
+  font-weight: 500;
+  text-align: center;
+}
+body .technologies-used .sectionTitle.upperSpace {
+  margin-top: 3rem;
+}
+body .technologies-used::before {
+  content: "TECH USED";
+  height: 30px;
+  width: max-content;
+  display: block;
+  font-family: "GT Pressura Mono", monospace;
+  position: absolute;
+  left: -4vw;
+  top: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+  color: #ddd5fd;
+}
+body .technologies-used::after {
+  content: "TECH USED";
+  height: 30px;
+  width: max-content;
+  display: block;
+  font-family: "GT Pressura Mono", monospace;
+  position: absolute;
+  left: calc(100% + 4vw);
+  top: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  color: #ddd5fd;
+}
+body .technologies-used .tech-group {
+  width: 50vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-inline: auto;
+  margin-top: 20px;
+}
+body .technologies-used .tech-group svg {
+  height: 50px;
+}
+
+footer {
   margin-top: 5rem;
   position: relative;
 }
-body footer .logo {
+footer .logo {
   position: absolute;
   width: 17px;
   height: 17px;
@@ -539,50 +607,50 @@ body footer .logo {
   z-index: 5;
   background: white;
 }
-body footer .logo .bracket {
+footer .logo .bracket {
   position: absolute;
   height: 5px;
   width: 5px;
   border: 1px solid #b8adff;
 }
-body footer .logo .bracket::before, body footer .logo .bracket::after {
+footer .logo .bracket::before, footer .logo .bracket::after {
   content: "";
   position: absolute;
   background: #b8adff;
 }
-body footer .logo .bracket::before {
+footer .logo .bracket::before {
   height: 20px;
   width: 1px;
 }
-body footer .logo .bracket::after {
+footer .logo .bracket::after {
   width: 20px;
   height: 1px;
 }
-body footer .logo .bracket.leftBracket {
+footer .logo .bracket.leftBracket {
   top: 22px;
   left: 22px;
 }
-body footer .logo .bracket.leftBracket::before {
+footer .logo .bracket.leftBracket::before {
   top: 4px;
   left: 1px;
 }
-body footer .logo .bracket.leftBracket::after {
+footer .logo .bracket.leftBracket::after {
   top: 1px;
   left: 4px;
 }
-body footer .logo .bracket.rightBracket {
+footer .logo .bracket.rightBracket {
   bottom: 22px;
   right: 22px;
 }
-body footer .logo .bracket.rightBracket::before {
+footer .logo .bracket.rightBracket::before {
   top: -20px;
   left: 1px;
 }
-body footer .logo .bracket.rightBracket::after {
+footer .logo .bracket.rightBracket::after {
   top: 1px;
   left: -20px;
 }
-body footer .contactInfo {
+footer .contactInfo {
   position: absolute;
   top: 2rem;
   padding: 3rem;
@@ -597,13 +665,13 @@ body footer .contactInfo {
   font-family: "GT Pressura Mono";
   font-size: 18px;
 }
-body footer .contactInfo .phoneNum {
+footer .contactInfo .phoneNum {
   text-decoration: none;
   color: #000;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
 }
-body footer .contactInfo .underlined-link {
+footer .contactInfo .underlined-link {
   color: #5934f6;
   text-decoration: none;
   position: relative;
@@ -611,7 +679,7 @@ body footer .contactInfo .underlined-link {
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
 }
-body footer .contactInfo .underlined-link::after {
+footer .contactInfo .underlined-link::after {
   content: "";
   width: 105%;
   height: 50%;
@@ -623,7 +691,7 @@ body footer .contactInfo .underlined-link::after {
   z-index: -1;
   transition: 0.5s;
 }
-body footer .contactInfo .underlined-link:hover::after {
+footer .contactInfo .underlined-link:hover::after {
   height: 80%;
   width: 120%;
 }
