@@ -330,7 +330,7 @@ body main .box.not-released .project-footer {
   color: gray !important;
 }
 body main .separator {
-  margin-block: 6rem 3rem;
+  margin-block: 7rem 6rem;
   margin-inline: auto;
   height: 7px;
   width: 7px;
@@ -379,9 +379,27 @@ body main .separator .dot::before {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (min-width: 1300px) {
+  body main .separator {
+    margin-block: 6rem 3rem;
+  }
+}
+body .section-title {
+  display: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-family: "GT Pressura Mono", monospace;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+body .section-title .last-letter {
+  letter-spacing: 0;
+}
 body .selected-work {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: relative;
   width: 80vw;
   flex-wrap: wrap;
@@ -415,7 +433,7 @@ body .selected-work.bottom-row {
 }
 body .selected-work .work-section {
   width: 30% !important;
-  min-width: 300px !important;
+  min-width: 370px !important;
   text-decoration: none;
   margin-right: 5px;
   min-height: 250px;
@@ -536,25 +554,40 @@ body .selected-work .work-section .corner.bottomRightCorner::after {
   top: 1px;
   left: -15px;
 }
-@media only screen and (max-width: 1010px) {
+@media screen and (max-width: 1010px) {
   body .selected-work .work-section {
     width: 100% !important;
     max-width: 100%;
     margin-top: 3rem;
   }
 }
+@media screen and (max-width: 1300px) {
+  body .selected-work {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  body .selected-work .work-section {
+    min-width: 80vw !important;
+  }
+}
+body .gap {
+  width: 100%;
+  height: 1rem;
+}
+@media screen and (max-width: 1300px) {
+  body .gap {
+    display: none;
+  }
+}
+body .gap-top {
+  margin-top: 3rem;
+}
 body .technologies-used {
   position: relative;
   width: 80vw;
-  padding-top: 3rem;
   text-align: center;
-}
-body .technologies-used .sectionTitle {
-  font-weight: 500;
-  text-align: center;
-}
-body .technologies-used .sectionTitle.upperSpace {
-  margin-top: 3rem;
 }
 body .technologies-used::before {
   content: "TECH USED";
@@ -582,15 +615,35 @@ body .technologies-used::after {
 }
 body .technologies-used .tech-group {
   width: 50vw;
-  height: 60px;
+  min-height: 60px;
+  height: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   margin-inline: auto;
   margin-top: 20px;
 }
 body .technologies-used .tech-group svg {
   height: 50px;
+  margin: 10px;
+}
+@media screen and (max-width: 1300px) {
+  body .section-title {
+    display: block;
+  }
+  body .featured-work::before, body .featured-work::after,
+body .selected-work::before,
+body .selected-work::after,
+body .aboutMe::before,
+body .aboutMe::after,
+body .technologies-used::before,
+body .technologies-used::after {
+    display: none !important;
+  }
+}
+body .non-disappearing {
+  display: block !important;
 }
 
 footer {
